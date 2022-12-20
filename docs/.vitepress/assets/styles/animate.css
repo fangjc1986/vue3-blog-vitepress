@@ -1,0 +1,44 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-quick-enter-active,
+.fade-quick-leave-active {
+  transition: 0.3s;
+}
+.fade-quick-enter,
+.fade-quick-leave-to {
+  opacity: 0;
+}
+.fade-top-enter-active,
+.fade-top-leave-active {
+  transition: 0.4s;
+}
+.fade-top-enter,
+.fade-top-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: 0.4s;
+}
+.fade-right-enter,
+.fade-right-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.fade-right-quick-enter-active,
+.fade-right-quick-leave-active {
+  transition: 0.2s;
+}
+.fade-right-quick-enter,
+.fade-right-quick-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+/*# sourceMappingURL=animate.css.map */
