@@ -9,6 +9,7 @@
         </div>
         <div class="ml-xs">
           <n-select :options="levelsOptions" v-model:value="level"
+                    style="width:100px"
                     @update:value="startGame"
           ></n-select>
         </div>
@@ -43,7 +44,7 @@
     </div>
 
   </div>
-</template>
+</template> 
 
 <script lang="ts">
 import {defineComponent, ref} from "vue";

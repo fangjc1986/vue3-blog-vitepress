@@ -5,7 +5,8 @@
         <n-button type="primary" v-if="gameState !== 2 " @click="restart">开始游戏</n-button>
         <n-button type="error" v-else @click="gameOver(false)">停止游戏</n-button>
         <div class="ml-xs">
-          <n-select :options="levels" v-model:value="nowLevelValue" :disabled="gameState === 2"></n-select>
+          <n-select style="width: 100px" :options="levels" v-model:value="nowLevelValue"
+                    :disabled="gameState === 2"></n-select>
         </div>
       </div>
 
@@ -51,7 +52,7 @@
         </n-input-group>
       </div>
       <div class="ml-xs">
-        <n-tag type="info">{{ timeDisplay }}</n-tag>
+        <n-tag type="info" style="width: 80px;text-align: center">{{ timeDisplay }}</n-tag>
       </div>
     </div>
     <div class="grid-container flex-column" onselectstart="return false" @contextmenu.prevent="">
@@ -168,6 +169,7 @@ export default defineComponent({
       if (grid) grid.status = 3;
     }
 
+    // #region delay-spread
     const openMine = (grids) => {
       const pushed = new Set<Grid>();
       for (const g of grids) {
@@ -185,6 +187,7 @@ export default defineComponent({
       }
       setTimeout(openMine.bind(this, pushed), 20);
     }
+    // #endregion delay-spread
 
     const leftClick = (grid: Grid) => {
       openMine([grid]);

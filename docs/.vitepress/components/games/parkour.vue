@@ -158,12 +158,14 @@ export default defineComponent({
     }
 
     const keydown = (e) => {
+      e.preventDefault()
       if ([32, 38, 87].includes(e.keyCode)) return keydownJump();
       if ([39, 68].includes(e.keyCode)) return keydownRight();
       if ([65, 37].includes(e.keyCode)) return keydownLeft();
     }
 
     const keyup = (e) => {
+      e.preventDefault()
       if ([32, 38, 87].includes(e.keyCode)) return keyupJump();
       if ([39, 68].includes(e.keyCode)) return keyupRight();
       if ([65, 37].includes(e.keyCode)) return keyupLeft();

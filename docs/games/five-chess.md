@@ -15,7 +15,10 @@ import FiveChess from "../.vitepress/components/games/five-chess.vue"
 
 ## 算法
 
-基于 `大小博弈算法`，具体算法度娘搜索一堆。
+基于 `大小博弈算法`，具体简要算法可以看 [`井字棋游戏`](tic-tac-toe.md#算法) 中的介绍。
 
-所有棋类算法均可使用
+五子棋相比 `井字棋` 要困难许多，主要集中在 `评估函数上` ;
 
+## 源码
+
+<<< @/.vitepress/components/games/five-chess.vue

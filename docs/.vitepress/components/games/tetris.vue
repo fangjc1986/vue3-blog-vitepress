@@ -198,6 +198,7 @@ export default defineComponent({
     })
 
     const onKeyDown = (e) => {
+      e.preventDefault();
       const kc = e.keyCode;
       if (gameStatus.value !== 2) return;
       if (kc < 37 || kc > 40) return;
