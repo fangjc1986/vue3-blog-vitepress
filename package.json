@@ -16,7 +16,9 @@
     "vitepress": "^1.0.0-alpha.30"
   },
   "dependencies": {
+    "dayjs": "^1.11.7",
     "less": "^4.1.3",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "three": "^0.148.0"
   }
 }
