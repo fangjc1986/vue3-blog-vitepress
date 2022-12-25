@@ -1,17 +1,20 @@
 <template>
-  <div class="ArknoidGame">
-    <div class="pos-r" style="height: 480px;width: 800px;">
-      <canvas class="canvas"
-              width="800" height="480"
-              ref="canvas"
-              @mousemove="onMouseMove"
+  <div class="ArknoidGame flex-column flex-center-all">
+    <div class="pos-r" style="height: 480px; width: 800px">
+      <canvas
+        class="canvas"
+        width="800"
+        height="480"
+        ref="canvas"
+        @mousemove="onMouseMove"
       ></canvas>
-      <div class="pos-a " v-if="!status"
-           style=" top: 150px;z-index: 2; left: 0;right: 0">
-        <div class="color-text fz-lg cursor-p ptb-sm font-bold bg-white text-center"
-             style="width: 130px; margin: auto; border: 5px solid #cccccc"
-             @click="restart"
-        >点击开始
+      <div class="pos-a" v-if="!status" style="top: 150px; z-index: 2; left: 0; right: 0">
+        <div
+          class="color-text fz-lg cursor-p ptb-sm font-bold bg-white text-center"
+          style="width: 130px; margin: auto; border: 5px solid #cccccc"
+          @click="restart"
+        >
+          点击开始
         </div>
       </div>
     </div>
@@ -19,7 +22,7 @@
 </template>
 
 <script>
-import _ from "lodash"
+import _ from "lodash";
 
 const M = Math;
 const PI = Math.PI;
@@ -46,7 +49,7 @@ class Tile {
 }
 
 export default {
-  name: 'ArknoidGame',
+  name: "ArknoidGame",
   data() {
     return {
       step: 2,
@@ -54,13 +57,13 @@ export default {
       remainTile: 0,
       runTmo: null,
       ctx: null,
-      lineWall: {w: 100, h: 10, x: 0, y: 450, last: []},
-      canvas: {w: 800, h: 480},
-      ball: {r: 3, x: 100, y: 100, dir: [M.cos(PI / 4), -M.sin(PI / 4)]},
+      lineWall: { w: 100, h: 10, x: 0, y: 450, last: [] },
+      canvas: { w: 800, h: 480 },
+      ball: { r: 3, x: 100, y: 100, dir: [M.cos(PI / 4), -M.sin(PI / 4)] },
       tiles: [],
       // 0停止 1游戏中
       status: 0,
-    }
+    };
   },
   mounted() {
     this.ctx = this.$refs.canvas.getContext("2d");
@@ -122,17 +125,18 @@ export default {
     },
 
     computeCrashTiles() {
-      const bx1 = this.ball.x - this.ball.r, bx2 = this.ball.x + this.ball.r;
-      const by1 = this.ball.y - this.ball.r, by2 = this.ball.y + this.ball.r;
+      const bx1 = this.ball.x - this.ball.r,
+        bx2 = this.ball.x + this.ball.r;
+      const by1 = this.ball.y - this.ball.r,
+        by2 = this.ball.y + this.ball.r;
       const dxy = [this.ball.dir[0] >= 0 ? 1 : 0, this.ball.dir[1] >= 0 ? 1 : 0];
       const bp = [dxy[0] ? bx2 : bx1, dxy[1] ? by2 : by1];
-      const tileWidth = Tile.column * (Tile.w + 1), tileHeight = Tile.row * (Tile.h + 1);
+      const tileWidth = Tile.column * (Tile.w + 1),
+        tileHeight = Tile.row * (Tile.h + 1);
       if (bp[1] < 50 || bp[1] > 50 + tileHeight) {
         return false;
       }
-      if (bp[0] < 50 || bp[0] > 450 + tileWidth ||
-          (bp[0] < 450 && bp[0] > 50 + tileWidth)
-      ) {
+      if (bp[0] < 50 || bp[0] > 450 + tileWidth || (bp[0] < 450 && bp[0] > 50 + tileWidth)) {
         return false;
       }
       const r = M.floor((bp[1] - 50) / (Tile.h + 1));
@@ -140,7 +144,10 @@ export default {
       const c = M.floor((bp[0] - (area ? 400 : 0) - 50) / (Tile.w + 1));
       const tile = this.tiles[area][r][c];
       if (!tile.show) return false;
-      const cxy = [dxy[0] ? bp[0] - tile.x1 : tile.x2 - bp[0], dxy[1] ? bp[1] - tile.y1 : tile.y2 - bp[1]];
+      const cxy = [
+        dxy[0] ? bp[0] - tile.x1 : tile.x2 - bp[0],
+        dxy[1] ? bp[1] - tile.y1 : tile.y2 - bp[1],
+      ];
       if (cxy[0] < 0 || cxy[1] < cxy[0]) {
         this.ball.dir[1] = -this.ball.dir[1];
       } else {
@@ -152,10 +159,10 @@ export default {
 
     computeCrashLineWall() {
       if (
-          this.ball.dir[1] >= 0 &&
-          this.ball.y + this.ball.r >= this.lineWall.y &&
-          this.ball.x + this.ball.r > this.lineWall.x &&
-          this.ball.x - this.ball.r < this.lineWall.x + this.lineWall.w
+        this.ball.dir[1] >= 0 &&
+        this.ball.y + this.ball.r >= this.lineWall.y &&
+        this.ball.x + this.ball.r > this.lineWall.x &&
+        this.ball.x - this.ball.r < this.lineWall.x + this.lineWall.w
       ) {
         const p = (this.ball.x - this.lineWall.x - this.lineWall.w / 2) / 100;
         const pp = M.abs(M.max(M.min(p, 0.5), -0.5));
@@ -180,7 +187,8 @@ export default {
 
     resetTiles() {
       for (let a = 0; a < 2; a++) {
-        const sx = a * 400 + 50, sy = 50;
+        const sx = a * 400 + 50,
+          sy = 50;
         this.tiles[a] = [];
         for (let i = 0; i < Tile.row; i++) {
           this.tiles[a][i] = [];
@@ -222,19 +230,16 @@ export default {
       if (this.lineWall.last.length > 10) this.lineWall.last.shift();
       this.ctx.fillStyle = "#0a0a76";
       this.ctx.fillRect(x, this.lineWall.y, this.lineWall.w, this.lineWall.h);
-    }
-
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="less">
 .ArknoidGame {
-
 }
 
 .canvas {
   background-color: #efefef;
-
 }
 </style>
