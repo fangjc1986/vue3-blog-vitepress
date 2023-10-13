@@ -1,6 +1,7 @@
 module.exports = {
   title: "Interesting",
   description: "Just playing around.",
+  base: "/", // 设置站点根路径 /bar/
   head: [
     [
       "meta",

@@ -1,6 +1,9 @@
 module.exports = {
   logo: "/logo-1.jpeg",
-  nav: [{ text: "小游戏", link: "/games/" }],
+  nav: [
+    { text: "小游戏", link: "/games/" },
+    { text: "前端自制组件", link: "/frontend-components/" },
+  ],
   sidebar: {
     "/games/": [
       {
@@ -19,6 +22,17 @@ module.exports = {
           { text: "俄罗斯方块", link: "/games/tetris" },
           { text: "画画板", link: "/games/painting" },
           { text: "贪吃蛇", link: "/games/snake" },
+        ],
+      },
+    ],
+    "/frontend-components/": [
+      {
+        text: "前端自制组件",
+        collapsible: true,
+        items: [
+          // This shows `/guide/index.md` page.
+          { text: "声明", link: "/frontend-components/" }, // /guide/index.md
+          { text: "V3DragZoom（缩放拖拽）", link: "/frontend-components/v3-drag-zoom" },
         ],
       },
     ],
