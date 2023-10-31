@@ -22,7 +22,9 @@ import Game from "../.vitepress/components/games/parkour.vue"
 
 :::
 
+<ClientOnly>
 <Game />
+</ClientOnly>
 
 ## 算法
 

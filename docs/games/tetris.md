@@ -20,7 +20,9 @@ import Game from "../.vitepress/components/games/tetris.vue"
 
 :::
 
+<ClientOnly>
 <Game />
+</ClientOnly>
 
 ## 算法
 

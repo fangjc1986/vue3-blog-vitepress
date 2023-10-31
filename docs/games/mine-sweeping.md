@@ -21,7 +21,9 @@ import Game from "../.vitepress/components/games/mine-sweeping.vue"
 
 :::
 
+<ClientOnly>
 <Game />
+</ClientOnly>
 
 ## 算法
 

@@ -18,7 +18,9 @@ import Game from "../.vitepress/components/games/ArknoidGame.vue"
 有点简单
 :::
 
+<ClientOnly>
 <Game />
+</ClientOnly>
 
 ## 算法
 

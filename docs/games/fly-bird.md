@@ -23,7 +23,10 @@ import Game2 from "../.vitepress/components/games/fly-bird-only.vue";
 
 :::
 
+<ClientOnly>
 <Game />
+</ClientOnly>
+
 
 ## 算法
 
@@ -35,7 +38,9 @@ import Game2 from "../.vitepress/components/games/fly-bird-only.vue";
 
 鸟头方向使用速度与角度对应关系：[`向上初始速度`, `- 向下初始速度`] -> [ `- PI/2` , `PI/2` ];
 
+<ClientOnly>
 <Game2 />
+</ClientOnly>
 
 ### 柱子
 

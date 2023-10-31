@@ -11,7 +11,9 @@ import TicTacToe from "../.vitepress/components/games/tic-tac-toe.vue"
 你根本不可能战胜它
 :::
 
+<ClientOnly>
 <TicTacToe />
+</ClientOnly>
 
 ## 算法
 

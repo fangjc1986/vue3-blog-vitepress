@@ -19,7 +19,10 @@ import Game from "../.vitepress/components/games/painting.vue"
 没有实现像写毛笔一样的粗细变化，后面有空再研究研究
 
 :::
+
+<ClientOnly>
 <Game />
+</ClientOnly>
 
 ## 算法
 

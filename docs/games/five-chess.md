@@ -11,7 +11,9 @@ import FiveChess from "../.vitepress/components/games/five-chess.vue"
 由于前端计算性能有限，计算深度为 `2` 步（太深直接等到天荒地老）;
 :::
 
+<ClientOnly>
 <FiveChess />
+</ClientOnly>
 
 ## 算法
 

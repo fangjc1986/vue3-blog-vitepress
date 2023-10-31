@@ -1,38 +1,38 @@
 {
-  "hash": "092aa817",
-  "browserHash": "35902311",
+  "hash": "4fb13b7d",
+  "browserHash": "5625db44",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "2ce83c14",
+      "fileHash": "0349b466",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "03d70e45",
+      "fileHash": "daa8c6ee",
       "needsInterop": false
     },
     "naive-ui": {
       "src": "../../../../node_modules/naive-ui/es/index.js",
       "file": "naive-ui.js",
-      "fileHash": "c1f03748",
+      "fileHash": "cbe5c2c6",
       "needsInterop": false
     },
     "v3-drag-zoom": {
-      "src": "../../../../node_modules/v3-drag-zoom/dist/index.es.js",
+      "src": "../../../../node_modules/v3-drag-zoom/dist/v3-drag-zoom.umd.cjs",
       "file": "v3-drag-zoom.js",
-      "fileHash": "3ea24c78",
-      "needsInterop": false
+      "fileHash": "764f9fab",
+      "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-V634PGSD": {
-      "file": "chunk-V634PGSD.js"
+    "chunk-7PWW22E2": {
+      "file": "chunk-7PWW22E2.js"
     },
-    "chunk-5WWUZCGV": {
-      "file": "chunk-5WWUZCGV.js"
+    "chunk-ROME4SDB": {
+      "file": "chunk-ROME4SDB.js"
     }
   }
 }
