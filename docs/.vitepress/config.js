@@ -1,7 +1,7 @@
 module.exports = {
   title: "Interesting",
   description: "Just playing around.",
-  base: "/", // 设置站点根路径 /bar/
+  base: "/blog-vue3-vitepress/", // 设置站点根路径 /bar/
   head: [
     [
       "meta",

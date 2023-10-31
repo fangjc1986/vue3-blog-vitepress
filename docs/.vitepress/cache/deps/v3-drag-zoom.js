@@ -61,8 +61,8 @@ var require_v3_drag_zoom_umd = __commonJS({
           a2[t2] = l2;
         return a2;
       }, i = s(o.defineComponent({ __name: "v3-drag-zoom-container", props: { autoResize: { type: Boolean, default: true }, followPointer: { type: Boolean, default: true }, maxZoom: { default: 100 }, minZoom: { default: 0.01 }, align: { default: "contain" }, zoomFactor: { default: 0.1 }, draggable: { type: Boolean, default: true }, zoomable: { type: Boolean, default: true }, loading: { type: Boolean, default: false }, animateDuration: { default: 200 } }, setup(e2, { expose: a2 }) {
-        const t2 = e2, s2 = o.ref(false), i2 = o.computed(() => t2.loading || s2.value), c2 = o.ref(), d2 = o.ref(0), m = o.ref(0), f = o.ref(), p = o.ref(0), g = o.ref(0), h = o.computed(() => (d2.value - p.value) / 2), y = o.computed(() => (m.value - g.value) / 2), w = o.ref(1), M = o.computed(() => ({ min: w.value * t2.minZoom, max: w.value * t2.maxZoom })), x = o.computed(() => d2.value / m.value), b = o.computed(() => p.value / g.value), z = o.ref(1), E = o.ref(1), _ = o.ref(1), D = o.computed(() => _.value), S = o.ref(0), B = o.ref(0), $ = o.ref(0), P = o.ref(0), Z = o.computed(() => S.value + $.value), C = o.computed(() => B.value + P.value), T = () => {
-          V(), $.value = 0, P.value = 0;
+        const t2 = e2, s2 = o.ref(false), i2 = o.computed(() => t2.loading || s2.value), c2 = o.ref(), d2 = o.ref(0), m = o.ref(0), f = o.ref(), p = o.ref(0), g = o.ref(0), h = o.computed(() => (d2.value - p.value) / 2), y = o.computed(() => (m.value - g.value) / 2), w = o.ref(1), M = o.computed(() => ({ min: w.value * t2.minZoom, max: w.value * t2.maxZoom })), x = o.computed(() => d2.value / m.value), b = o.computed(() => p.value / g.value), z = o.ref(1), E = o.ref(1), _ = o.ref(1), D = o.computed(() => _.value), S = o.ref(0), B = o.ref(0), P = o.ref(0), $ = o.ref(0), Z = o.computed(() => S.value + P.value), C = o.computed(() => B.value + $.value), T = () => {
+          V(), P.value = 0, $.value = 0;
         }, V = () => {
           switch (c2.value, [d2.value, m.value] = l(c2.value), c2.value, [p.value, g.value] = l(f.value), t2.align) {
             case "cover":
@@ -86,7 +86,7 @@ var require_v3_drag_zoom_umd = __commonJS({
           if (!k.value)
             return;
           const e3 = I.value.sub(F.value);
-          $.value += e3.x, P.value += e3.y, F.value = I.value;
+          P.value += e3.x, $.value += e3.y, F.value = I.value;
         };
         const O = (e3) => {
           I.value = new u(e3.clientX, e3.clientY);
@@ -104,9 +104,9 @@ var require_v3_drag_zoom_umd = __commonJS({
         };
         const N = (e3) => {
           H.forEach((o2) => o2.onMouseleave(e3));
-        }, X = o.computed(() => new u($.value + d2.value / 2, P.value + m.value / 2)), q = (e3, o2) => {
+        }, X = o.computed(() => new u(P.value + d2.value / 2, $.value + m.value / 2)), q = (e3, o2) => {
           const a3 = D.value + D.value * e3;
-          a3 < M.value.min || a3 > M.value.max || (_.value = a3, z.value = p.value * a3, E.value = g.value * a3, t2.followPointer && o2 && ($.value += (X.value.x - o2.x) * e3, P.value += (X.value.y - o2.y) * e3));
+          a3 < M.value.min || a3 > M.value.max || (_.value = a3, z.value = p.value * a3, E.value = g.value * a3, t2.followPointer && o2 && (P.value += (X.value.x - o2.x) * e3, $.value += (X.value.y - o2.y) * e3));
         };
         R.onMousewheel = (e3, o2) => {
           t2.zoomable && q(o2, ((e4, o3) => {
@@ -149,16 +149,16 @@ var require_v3_drag_zoom_umd = __commonJS({
         }, removeDragEvent: L, zoomProps: o.computed(() => t2) }), o.onUnmounted(() => {
           null == W || W.disconnect();
         }), a2({ reset: T, zoom: (e3) => q(e3) }), (e3, a3) => (o.openBlock(), o.createElementBlock("div", { class: "container", ref_key: "containerRef", ref: c2, onMousedown: j, onMousemove: O, onMouseleave: N, onMouseup: Y, onWheel: A, onselectstart: "return false" }, [o.createElementVNode("div", { class: "content", ref_key: "contentRef", ref: f, style: o.normalizeStyle(U.value) }, [o.renderSlot(e3.$slots, "default", {}, void 0, true)], 4), o.withDirectives(o.createElementVNode("div", r, [o.renderSlot(e3.$slots, "loading", {}, () => [o.createTextVNode(" Loading... ")], true)], 512), [[o.vShow, i2.value]])], 544));
-      } }), [["__scopeId", "data-v-2d33ea41"]]), c = s(o.defineComponent({ __name: "v3-drag-zoom-item", props: { offset: { default: () => [-50, -50] }, fixedSize: { type: Boolean, default: false }, rotate: { default: 0 }, draggable: { type: Boolean, default: false }, position: {} }, emits: ["onMove", "onMoveFinished"], setup(e2, { emit: a2 }) {
+      } }), [["__scopeId", "data-v-2d33ea41"]]), c = s(o.defineComponent({ __name: "v3-drag-zoom-item", props: { offset: { default: () => [-50, -50] }, fixedSize: { type: Boolean, default: false }, rotate: { default: 0 }, draggable: { type: Boolean, default: false }, position: {} }, emits: ["onMove", "onMoveFinished", "update:position"], setup(e2, { emit: a2 }) {
         const t2 = e2, { contentZoom: l2, addDragEvent: n2, zoomProps: r2 } = o.inject("v3-drag-zoom-item"), s2 = new v(), i2 = o.ref(u.fromCurPosition(t2.position));
         s2.onMousemove = (e3, o2, t3) => {
-          i2.value = i2.value.add(t3), a2("onMoveFinished", i2.value);
+          i2.value = i2.value.add(t3), a2("onMove", i2.value), a2("update:position", i2.value);
         };
         let c2 = new Function();
         o.onUnmounted(() => c2()), s2.onMouseup = () => {
           c2(), a2("onMoveFinished", i2.value);
         }, s2.onMouseleave = () => {
-          c2();
+          c2(), a2("onMoveFinished", i2.value);
         };
         const d2 = () => {
           t2.draggable && (c2 = n2(s2));
@@ -167,10 +167,10 @@ var require_v3_drag_zoom_umd = __commonJS({
           return [t2.offset[0] * m.value + 50 * e3, t2.offset[1] * m.value + 50 * e3];
         }), p = o.computed(() => ({ left: i2.value.x + "%", top: i2.value.y + "%", transition: `transform ${r2.value.animateDuration}ms`, transform: `translate(${f.value[0]}%, ${f.value[1]}%) rotate(${t2.rotate}deg) scale(${m.value})` }));
         return (e3, a3) => (o.openBlock(), o.createElementBlock("div", { style: o.normalizeStyle(p.value), class: "item", onMousedown: d2 }, [o.renderSlot(e3.$slots, "default", {}, void 0, true)], 36));
-      } }), [["__scopeId", "data-v-50e2971a"]]), d = { install(e2) {
+      } }), [["__scopeId", "data-v-40327a63"]]), d = { install(e2) {
         e2.component("V3DragZoomContainer", i), e2.component("V3DragZoomItem", c);
       } };
-      e.V3DragZoomContainer = i, e.V3DragZoomItem = c, e.default = d, Object.defineProperties(e, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+      e.Position = u, e.V3DragZoomContainer = i, e.V3DragZoomItem = c, e.default = d, Object.defineProperties(e, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
     });
   }
 });
