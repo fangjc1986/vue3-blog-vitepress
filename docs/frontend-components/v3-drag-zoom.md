@@ -173,7 +173,7 @@ createApp(App).use(V3DragZoom).mount("#app");
 | fixedSize         | Boolean                     | false       | 否    | 是否固定大小， true代表在缩放过程中该item内容尺寸不变                    |
 | rotate            | Float                       | 0           | 否    | 旋转角度单位 deg (360度）                                  |
 | draggable         | Boolean                     | false       | 否    | 是否可以拖拽移动                                           |  
-| position(v-model) | [CurPosition](#CurPosition) | 无           | 是    | 该 item 在内容中的位置（百分比位置）                              |
+| position(v-model) | [CurPosition](#curposition) | 无           | 是    | 该 item 在内容中的位置（百分比位置）                              |
 
 #### Slots
 
