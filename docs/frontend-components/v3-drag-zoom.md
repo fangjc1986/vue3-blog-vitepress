@@ -127,7 +127,7 @@ createApp(App).use(V3DragZoom).mount("#app");
 
 <summary>点击展开源码</summary>
 
-<<< @/.vitepress/components/frontend-components/v3-drag-zoom-demos/v3-drag-zoom-demo3.vue{53-61}
+<<< @/.vitepress/components/frontend-components/v3-drag-zoom-demos/v3-drag-zoom-demo3.vue
 
 </details>
 
