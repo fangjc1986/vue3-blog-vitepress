@@ -1,33 +1,66 @@
 {
-  "hash": "0c2eb505",
-  "browserHash": "1a89e3a6",
+  "hash": "a4ba69c9",
+  "browserHash": "e10aff77",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "99d082d7",
+      "fileHash": "0294d2ae",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "e6aca4d1",
+      "fileHash": "2d4fb35a",
       "needsInterop": false
     },
     "naive-ui": {
       "src": "../../../../node_modules/naive-ui/es/index.js",
       "file": "naive-ui.js",
-      "fileHash": "42790aee",
+      "fileHash": "bc0bc3fb",
       "needsInterop": false
     },
     "v3-drag-zoom": {
       "src": "../../../../node_modules/v3-drag-zoom/dist/v3-drag-zoom.umd.cjs",
       "file": "v3-drag-zoom.js",
-      "fileHash": "79d0a98a",
+      "fileHash": "e6e610ac",
       "needsInterop": true
+    },
+    "@arco-design/web-vue": {
+      "src": "../../../../node_modules/@arco-design/web-vue/es/index.js",
+      "file": "@arco-design_web-vue.js",
+      "fileHash": "f43f77a6",
+      "needsInterop": false
+    },
+    "lodash": {
+      "src": "../../../../node_modules/lodash/lodash.js",
+      "file": "lodash.js",
+      "fileHash": "93fc0787",
+      "needsInterop": true
+    },
+    "three": {
+      "src": "../../../../node_modules/three/build/three.module.js",
+      "file": "three.js",
+      "fileHash": "4525628f",
+      "needsInterop": false
+    },
+    "three/examples/jsm/loaders/FBXLoader.js": {
+      "src": "../../../../node_modules/three/examples/jsm/loaders/FBXLoader.js",
+      "file": "three_examples_jsm_loaders_FBXLoader__js.js",
+      "fileHash": "550d106b",
+      "needsInterop": false
+    },
+    "three/examples/jsm/controls/OrbitControls.js": {
+      "src": "../../../../node_modules/three/examples/jsm/controls/OrbitControls.js",
+      "file": "three_examples_jsm_controls_OrbitControls__js.js",
+      "fileHash": "1aa175bf",
+      "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-RNA42XM3": {
+      "file": "chunk-RNA42XM3.js"
+    },
     "chunk-7PWW22E2": {
       "file": "chunk-7PWW22E2.js"
     },

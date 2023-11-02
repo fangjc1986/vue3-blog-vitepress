@@ -19,13 +19,13 @@ const onChange = () => {
 };
 </script>
 <template>
-  <n-space class="">
-    <n-space vertical>
-      <n-space class="flex-horiz flex-center">
+  <a-space class="">
+    <a-space direction="vertical">
+      <a-space class="flex-horiz flex-center">
         <div class="no">对齐方式：</div>
-        <n-select
+        <a-select
           style="width: 120px"
-          v-model:value="alignMode"
+          v-model="alignMode"
           @change="onChange"
           :options="[
             { label: 'cover', value: 'cover' },
@@ -34,13 +34,8 @@ const onChange = () => {
           ]"
         />
         <div class="ml-md">内容尺寸</div>
-        <n-select
-          :options="sizeOptions"
-          v-model:value="size"
-          @change="onChange"
-          style="width: 200px"
-        />
-      </n-space>
+        <a-select :options="sizeOptions" v-model="size" @change="onChange" style="width: 200px" />
+      </a-space>
       <v3-drag-zoom-container
         ref="dragRef"
         :align="alignMode"
@@ -56,6 +51,6 @@ const onChange = () => {
           </div>
         </div>
       </v3-drag-zoom-container>
-    </n-space>
-  </n-space>
+    </a-space>
+  </a-space>
 </template>

@@ -3,19 +3,17 @@
     class="fly-bird flex-horiz flex-column flex-center-all pos-r w100p"
     onselectstart="return false"
   >
-    <div class="pb-sm">
-      <n-input-group>
-        <n-input-group-label>选择小鸟</n-input-group-label>
-        <n-select
-          v-model:value="selectedBird"
-          :options="birds"
-          style="width: 100px"
-          @change="$nextTick(reloadBird)"
-        >
-        </n-select>
-        <n-input-group-label>拖动旋转，滚轮缩放</n-input-group-label>
-      </n-input-group>
-    </div>
+    <a-space class="pb-sm">
+      <a-select
+        v-model="selectedBird"
+        :options="birds"
+        style="width: 150px"
+        @change="$nextTick(reloadBird)"
+      >
+        <template #prefix> 选择小鸟 </template>
+      </a-select>
+      <div class="ml-md">拖动旋转，滚轮缩放</div>
+    </a-space>
     <div class="pos-r">
       <div ref="screenRef" class="mar-center pos-r" style="width: 480px; height: 480px"></div>
     </div>

@@ -31,13 +31,13 @@ const fixedSize = ref(true);
 </script>
 
 <template>
-  <n-space class="">
-    <n-space vertical>
-      <n-space class="flex-horiz flex-center">
+  <a-space class="">
+    <a-space direction="vertical">
+      <a-space class="flex-horiz flex-center">
         <div class="no">对齐方式：</div>
-        <n-select
+        <a-select
           style="width: 120px"
-          v-model:value="alignMode"
+          v-model="alignMode"
           @change="onChange"
           :options="[
             { label: 'cover', value: 'cover' },
@@ -46,10 +46,10 @@ const fixedSize = ref(true);
           ]"
         />
         <div class="ml-md">是否允许拖拽：</div>
-        <n-switch v-model:value="draggable"></n-switch>
+        <a-switch v-model="draggable"></a-switch>
         <div class="ml-md">是否固定大小：</div>
-        <n-switch v-model:value="fixedSize"></n-switch>
-      </n-space>
+        <a-switch v-model="fixedSize"></a-switch>
+      </a-space>
       <v3-drag-zoom-container
         ref="dragRef"
         :align="alignMode"
@@ -74,6 +74,6 @@ const fixedSize = ref(true);
           <span style="font-size: 20px; color: black">{{ point.text }} </span>
         </v3-drag-zoom-item>
       </v3-drag-zoom-container>
-    </n-space>
-  </n-space>
+    </a-space>
+  </a-space>
 </template>
