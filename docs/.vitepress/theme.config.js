@@ -12,6 +12,7 @@ module.exports = {
         items: [
           // This shows `/guide/index.md` page.
           { text: "声明", link: "/games/" }, // /guide/index.md
+          //{ text: "双色球", link: "/games/double-ball" },
           { text: "AI井字棋", link: "/games/tic-tac-toe" },
           { text: "AI五子棋", link: "/games/five-chess" },
           { text: "飞翔的小鸟-3d", link: "/games/fly-bird" },
@@ -32,7 +33,11 @@ module.exports = {
         items: [
           // This shows `/guide/index.md` page.
           { text: "声明", link: "/frontend-components/" }, // /guide/index.md
-          { text: "V3DragZoom（缩放拖拽）", link: "/frontend-components/v3-drag-zoom" },
+          { text: "V3DragZoom - 缩放拖拽", link: "/frontend-components/v3-drag-zoom" },
+          {
+            text: "MermaidItMarkdown - 支持mermaid的markdown插件",
+            link: "/frontend-components/mermaid-it-markdown",
+          },
         ],
       },
     ],

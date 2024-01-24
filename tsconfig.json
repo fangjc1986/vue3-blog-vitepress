@@ -13,6 +13,7 @@
     "sourceMap": true,
     "downlevelIteration": true,
     "lib": [
+      "esnext",
       "es5",
       "es6",
       "es7",

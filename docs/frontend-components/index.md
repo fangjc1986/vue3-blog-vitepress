@@ -7,3 +7,5 @@
 - [v3-drag-zoom](./v3-drag-zoom.md)：一个基于 Vue3 的拖拽缩放组件，
 方便实现图片的拖拽缩放，以及地图标点的拖拽等功能，在一些特定场景下， 
 比起加载整个第三方地图插件要轻量的多。
+
+- [mermaid-it-markdown](./mermaid-it-markdown.md)：一个让 markdown-it 支持 mermaid 的插件。

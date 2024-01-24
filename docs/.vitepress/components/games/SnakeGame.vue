@@ -1,22 +1,12 @@
 <template>
-  <div class="">
+  <div class="SnakeGame">
     <div class="flex-horiz">
-      <div class="pa-xs pos-r" style="border:1px solid #eeeeee;">
-        <div class="pos-a"
-             v-if="!status"
-             style="top:100px; left: 0;right: 0"
-        >
-          <div class="pa-sm restart-button" @click="restart">
-            点击重新开始
-          </div>
+      <div class="pa-xs pos-r" style="border: 1px solid #eeeeee">
+        <div class="pos-a" v-if="!status" style="top: 100px; left: 0; right: 0">
+          <div class="pa-sm restart-button" @click="restart">点击重新开始</div>
         </div>
-        <div class="flex-horiz rows"
-             style=""
-             v-for="row in grids"
-        >
-          <div class="grid" v-for="grid in row"
-               :style="gridStyle(grid)"
-          ></div>
+        <div class="flex-horiz rows" style="" v-for="row in grids">
+          <div class="grid" v-for="grid in row" :style="gridStyle(grid)"></div>
         </div>
       </div>
     </div>
@@ -24,7 +14,6 @@
 </template>
 
 <script>
-
 import _ from "lodash";
 
 class Grid {
@@ -41,11 +30,11 @@ class Grid {
 
 const dir = [
   [-1, 0, 1, 0],
-  [0, 1, 0, -1]
-]
+  [0, 1, 0, -1],
+];
 
 export default {
-  name: 'SnakeGame',
+  name: "SnakeGame",
   data() {
     return {
       area: [20, 40],
@@ -56,7 +45,7 @@ export default {
       runTmo: null,
       // 0游戏停止 1正在游戏
       status: 0,
-    }
+    };
   },
   mounted() {
     this.init();
@@ -66,7 +55,6 @@ export default {
     window.removeEventListener("keydown", this.keyDownEvent);
   },
   methods: {
-
     restart() {
       clearTimeout(this.runTmo);
       this.init();
@@ -81,10 +69,13 @@ export default {
           this.grids[row][column] = new Grid(row, column);
         }
       }
-      this.snake = this.grids[0].slice(0, 3).reverse().map(g => {
-        g.type = 2;
-        return g;
-      });
+      this.snake = this.grids[0]
+        .slice(0, 3)
+        .reverse()
+        .map(g => {
+          g.type = 2;
+          return g;
+        });
       this.addFood();
       this.$forceUpdate();
     },
@@ -92,7 +83,7 @@ export default {
     snakeRun() {
       const head = this.snake[0];
       const nr = (head.row + dir[0][this.nowDir] + this.area[0]) % this.area[0],
-          nc = (head.column + dir[1][this.nowDir] + this.area[1]) % this.area[1];
+        nc = (head.column + dir[1][this.nowDir] + this.area[1]) % this.area[1];
       if (nr >= this.area[0] || nr < 0 || nc >= this.area[1] || nc < 0) return this.gameOver();
       const nextGrid = this.grids[nr][nc];
       if ([0, 1].includes(nextGrid.type) || !this.snake.slice(1).includes(nextGrid)) {
@@ -104,7 +95,7 @@ export default {
       } else return this.gameOver();
 
       this.$forceUpdate();
-      this.runTmo = setTimeout(this.snakeRun.bind(this), 500 * (.9 ** (this.snake.length / 3)))
+      this.runTmo = setTimeout(this.snakeRun.bind(this), 500 * 0.9 ** (this.snake.length / 3));
     },
 
     addFood() {
@@ -130,16 +121,17 @@ export default {
 
     gridStyle(grid) {
       return {
-        "background-color": this.snake[0] === grid ? "blue" : ["#f2f2f2", "#ff00ff", "#000"][grid.type],
-      }
-    }
-  }
+        "background-color":
+          this.snake[0] === grid ? "blue" : ["#f2f2f2", "#ff00ff", "#000"][grid.type],
+      };
+    },
+  },
 };
 </script>
 
 <style scoped lang="less">
 .SnakeGame {
-
+  color: black;
 }
 
 .grid {
