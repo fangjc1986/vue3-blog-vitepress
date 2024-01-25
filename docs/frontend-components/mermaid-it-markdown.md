@@ -62,7 +62,7 @@ markdownIt.use(mermaidItMarkdown)
 
 ## **更多语法请参考 [mermaid在线示例](https://mermaid.live/)**
 
-## 完整示例（mavon-editor中使用，其他类似）：
+## 完整示例：
 
 - 源码：
 
