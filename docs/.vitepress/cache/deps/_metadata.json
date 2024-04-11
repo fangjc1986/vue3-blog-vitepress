@@ -1,149 +1,61 @@
 {
-  "hash": "7b77b89d",
-  "browserHash": "86e0acb1",
+  "hash": "c1eb4692",
+  "configHash": "c559c190",
+  "lockfileHash": "605bb48d",
+  "browserHash": "2002e96e",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "6250de9d",
+      "fileHash": "13524683",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "6cdf0783",
+      "fileHash": "4cb4f5ee",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "9eff41f3",
       "needsInterop": false
     },
     "v3-drag-zoom": {
       "src": "../../../../node_modules/v3-drag-zoom/dist/v3-drag-zoom.umd.cjs",
       "file": "v3-drag-zoom.js",
-      "fileHash": "c4c04e3e",
+      "fileHash": "d33efecc",
       "needsInterop": true
     },
     "@arco-design/web-vue": {
       "src": "../../../../node_modules/@arco-design/web-vue/es/index.js",
       "file": "@arco-design_web-vue.js",
-      "fileHash": "0e14e9dd",
+      "fileHash": "263c71a8",
       "needsInterop": false
     },
-    "mermaid-it-markdown": {
-      "src": "../../../../node_modules/mermaid-it-markdown/dist/mermaid-it-markdown.js",
-      "file": "mermaid-it-markdown.js",
-      "fileHash": "29f9a5b6",
+    "vue3-colorpicker-esm": {
+      "src": "../../../../node_modules/vue3-colorpicker-esm/dist/index.es.js",
+      "file": "vue3-colorpicker-esm.js",
+      "fileHash": "0c9ca967",
       "needsInterop": false
     },
-    "markdown-it": {
-      "src": "../../../../node_modules/markdown-it/index.mjs",
-      "file": "markdown-it.js",
-      "fileHash": "46130378",
+    "coordinate-draw-line": {
+      "src": "../../../../node_modules/coordinate-draw-line/dist/coordinate-draw-line.js",
+      "file": "coordinate-draw-line.js",
+      "fileHash": "38086f5e",
+      "needsInterop": false
+    },
+    "vue/server-renderer": {
+      "src": "../../../../node_modules/vue/server-renderer/index.mjs",
+      "file": "vue_server-renderer.js",
+      "fileHash": "e8d22143",
       "needsInterop": false
     }
   },
   "chunks": {
-    "timeline-definition-026dd3a6-6ONDWGOI": {
-      "file": "timeline-definition-026dd3a6-6ONDWGOI.js"
-    },
-    "mindmap-definition-e19a4bed-LOFGFJLP": {
-      "file": "mindmap-definition-e19a4bed-LOFGFJLP.js"
-    },
-    "sankeyDiagram-86f1d020-CSK24E22": {
-      "file": "sankeyDiagram-86f1d020-CSK24E22.js"
-    },
-    "requirementDiagram-025ed9cd-LGVJNWHG": {
-      "file": "requirementDiagram-025ed9cd-LGVJNWHG.js"
-    },
-    "sequenceDiagram-d8e7905c-TWCE62TP": {
-      "file": "sequenceDiagram-d8e7905c-TWCE62TP.js"
-    },
-    "classDiagram-14bbef50-OAA7PELB": {
-      "file": "classDiagram-14bbef50-OAA7PELB.js"
-    },
-    "classDiagram-v2-36dc72da-GUZOHAYI": {
-      "file": "classDiagram-v2-36dc72da-GUZOHAYI.js"
-    },
-    "chunk-RQOZGGY5": {
-      "file": "chunk-RQOZGGY5.js"
-    },
-    "stateDiagram-b8fc1844-IJ5TGL7V": {
-      "file": "stateDiagram-b8fc1844-IJ5TGL7V.js"
-    },
-    "stateDiagram-v2-8daeecfe-7A2XO7H3": {
-      "file": "stateDiagram-v2-8daeecfe-7A2XO7H3.js"
-    },
-    "chunk-THFLZ5KO": {
-      "file": "chunk-THFLZ5KO.js"
-    },
-    "journeyDiagram-0938c3e3-7YCBZIOM": {
-      "file": "journeyDiagram-0938c3e3-7YCBZIOM.js"
-    },
-    "flowchart-elk-definition-d0e11316-DSS757AH": {
-      "file": "flowchart-elk-definition-d0e11316-DSS757AH.js"
-    },
-    "flowDiagram-v2-d21afba7-YEXNN4PB": {
-      "file": "flowDiagram-v2-d21afba7-YEXNN4PB.js"
-    },
-    "erDiagram-4c71174c-V5VMAPI4": {
-      "file": "erDiagram-4c71174c-V5VMAPI4.js"
-    },
-    "gitGraphDiagram-20ac17d4-FDAONGN2": {
-      "file": "gitGraphDiagram-20ac17d4-FDAONGN2.js"
-    },
-    "ganttDiagram-d9c0fa4d-XR3OF6CP": {
-      "file": "ganttDiagram-d9c0fa4d-XR3OF6CP.js"
-    },
-    "infoDiagram-98fa4f49-BMHRISOL": {
-      "file": "infoDiagram-98fa4f49-BMHRISOL.js"
-    },
-    "pieDiagram-cc8a845d-2QVGWD2D": {
-      "file": "pieDiagram-cc8a845d-2QVGWD2D.js"
-    },
-    "quadrantDiagram-d70906b3-Z3SHF4VB": {
-      "file": "quadrantDiagram-d70906b3-Z3SHF4VB.js"
-    },
-    "xychartDiagram-a7b7bb0e-O5PB7HHV": {
-      "file": "xychartDiagram-a7b7bb0e-O5PB7HHV.js"
-    },
-    "chunk-ZLATYIW3": {
-      "file": "chunk-ZLATYIW3.js"
-    },
-    "chunk-455EPCY7": {
-      "file": "chunk-455EPCY7.js"
-    },
-    "c4Diagram-6af2d31c-2QGJWFEK": {
-      "file": "c4Diagram-6af2d31c-2QGJWFEK.js"
-    },
-    "chunk-VNDSBGM4": {
-      "file": "chunk-VNDSBGM4.js"
-    },
-    "flowDiagram-18ba08e1-KPOABIS4": {
-      "file": "flowDiagram-18ba08e1-KPOABIS4.js"
-    },
-    "chunk-QYM3G6WL": {
-      "file": "chunk-QYM3G6WL.js"
-    },
-    "chunk-V3N6HLPP": {
-      "file": "chunk-V3N6HLPP.js"
-    },
-    "chunk-YWJBUV34": {
-      "file": "chunk-YWJBUV34.js"
-    },
-    "chunk-KYBYKPQ5": {
-      "file": "chunk-KYBYKPQ5.js"
-    },
-    "chunk-3N6UY6KT": {
-      "file": "chunk-3N6UY6KT.js"
-    },
-    "chunk-5CHVVU77": {
-      "file": "chunk-5CHVVU77.js"
-    },
-    "chunk-K3ZAVUDO": {
-      "file": "chunk-K3ZAVUDO.js"
-    },
-    "chunk-HBAMDPI3": {
-      "file": "chunk-HBAMDPI3.js"
-    },
-    "chunk-AUZ3RYOM": {
-      "file": "chunk-AUZ3RYOM.js"
+    "chunk-ZPJTTWLD": {
+      "file": "chunk-ZPJTTWLD.js"
     }
   }
 }

@@ -1,11 +1,9 @@
 import {
+  __commonJS,
+  __toCommonJS,
   init_vue_runtime_esm_bundler,
   vue_runtime_esm_bundler_exports
-} from "./chunk-455EPCY7.js";
-import {
-  __commonJS,
-  __toCommonJS
-} from "./chunk-AUZ3RYOM.js";
+} from "./chunk-ZPJTTWLD.js";
 
 // node_modules/v3-drag-zoom/dist/v3-drag-zoom.umd.cjs
 var require_v3_drag_zoom_umd = __commonJS({
@@ -125,7 +123,7 @@ var require_v3_drag_zoom_umd = __commonJS({
         const U = o.computed(() => ({ transform: `translate(${Z.value}px, ${C.value}px) scale(${D.value})`, transition: k.value || i2.value ? "none" : `transform ${t2.animateDuration}ms`, opacity: i2.value ? 0 : 1 }));
         let W = null;
         o.onMounted(() => {
-          W = new ResizeObserver((() => {
+          W = new ResizeObserver(/* @__PURE__ */ (() => {
             let e3 = 0;
             return () => {
               e3 && clearTimeout(e3), e3 = setTimeout(() => {

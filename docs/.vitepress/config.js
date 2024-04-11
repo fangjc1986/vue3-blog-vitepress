@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: "Interesting",
   description: "Just playing around.",
   base: "/blog-vue3-vitepress/", // 设置站点根路径 /bar/
@@ -15,5 +15,5 @@ module.exports = {
   markdown: {
     lineNumbers: true,
   },
-  themeConfig: require("./theme.config"),
+  themeConfig: import("./theme.config").default,
 };

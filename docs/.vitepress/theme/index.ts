@@ -17,6 +17,7 @@ export default {
     DefaultTheme.enhanceApp(ctx);
     app.use(ArcoVue);
     app.use(v3DragZoom);
+    // app.use(Vue3ColorPickerEsm);
     // app.use(ArcoVueIcon);
     // app.use(MavonEditor);
   },

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   logo: "/logo-1.jpeg",
   nav: [
     { text: "小游戏", link: "/games/" },
@@ -37,6 +37,10 @@ module.exports = {
           {
             text: "MermaidItMarkdown - 支持mermaid的markdown插件",
             link: "/frontend-components/mermaid-it-markdown",
+          },
+          {
+            text: "CoordinateDrawLine - 坐标轴折线绘制",
+            link: "/frontend-components/coordinate-draw-line",
           },
         ],
       },
