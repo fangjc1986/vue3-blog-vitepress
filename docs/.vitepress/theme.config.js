@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   logo: "/logo-1.jpeg",
   nav: [
     { text: "小游戏", link: "/games/" },

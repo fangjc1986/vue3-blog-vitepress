@@ -15,5 +15,5 @@ export default {
   markdown: {
     lineNumbers: true,
   },
-  themeConfig: import("./theme.config").default,
+  themeConfig: require("./theme.config"),
 };
