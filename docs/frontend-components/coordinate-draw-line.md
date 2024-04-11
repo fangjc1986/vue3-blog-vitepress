@@ -82,30 +82,30 @@ createApp(App).use(CoordinateDrawLine).mount("#app");
 
 #### Props
 
-| 参数名             | 类型         | 默认值                                    | 是否必须 | 说明           |
-|-----------------|------------|----------------------------------------|------|--------------|
-| xStart          | number     | 0                                      | 否    | 坐标系左下角x起始大小  |
-| yStart          | number     | 0                                      | 否    | 坐标系左下角y起始大小  |
-| xEnd            | number     | 必填                                     | 是    | 坐标系右上角x结束大小  |                  |
-| yEnd            | number     | 必填                                     | 是    | 坐标系右上角y结束大小  |                  |
-| xAxisSplit      | int        | 10                                     | 否    | X轴分割线的数量     |             |   
-| yAxisSplit      | int        | 10                                     | 否    | Y轴分割线的数量     |
-| splitStyle      | LineStyle  | `{lineWidth:1,strokeStyle:'#aaa'}`     | 否    | 分割线样式        |
-| axisStyle       | LineStyle  | `{lineWidth:1,strokeStyle:'#000'}`     | 否    | 轴线样式         |
-| lineStyle       | LineStyle  | `{lineWidth:1,strokeStyle:'#000'}`     | 否    | 默认线条样式       |
-| lineHoverStyle  | LineStyle  | `{lineWidth:2,strokeStyle:'#000'}`     | 否    | 默认鼠标悬浮在线条上样式 |
-| pointStyle      | PointStyle | `{lineWidth:1,radius:3}`               | 否    | 默认点样式        |
-| pointHoverStyle | PointStyle | `{lineWidth:2,radius:5}`               | 否    | 默认鼠标悬浮在点上样式  |
-| textStyle       | TextStyle  | `{fillStyle:'#000',font:'12px Arial'}` | 否    | 刻度文本样式       |
-| textDistance    | number     | 5                                      | 否    | 文本与轴线的距离     |
-| padding         | number     | 20                                     | 否    | 坐标系与容器之间的距离  |
+| 参数名             | 类型         | 默认值 | 是否必须 | 说明           |
+|-----------------|------------|-----|------|--------------|
+| xStart          | number     | 0   | 否    | 坐标系左下角x起始大小  |
+| yStart          | number     | 0   | 否    | 坐标系左下角y起始大小  |
+| xEnd            | number     |     | 是    | 坐标系右上角x结束大小  |                  |
+| yEnd            | number     |     | 是    | 坐标系右上角y结束大小  |                  |
+| xAxisSplit      | int        | 10  | 否    | X轴分割线的数量     |             |   
+| yAxisSplit      | int        | 10  | 否    | Y轴分割线的数量     |
+| splitStyle      | LineStyle  |     | 否    | 分割线样式        |
+| axisStyle       | LineStyle  |     | 否    | 轴线样式         |
+| lineStyle       | LineStyle  |     | 否    | 默认线条样式       |
+| lineHoverStyle  | LineStyle  |     | 否    | 默认鼠标悬浮在线条上样式 |
+| pointStyle      | PointStyle |     | 否    | 默认点样式        |
+| pointHoverStyle | PointStyle |     | 否    | 默认鼠标悬浮在点上样式  |
+| textStyle       | TextStyle  |     | 否    | 刻度文本样式       |
+| textDistance    | number     | 5   | 否    | 文本与轴线的距离     |
+| padding         | number     | 20  | 否    | 坐标系与容器之间的距离  |
 
 #### Event
 
-| 事件       | 参数           | 说明                           |
-|----------|--------------|------------------------------|
-| changing | (point:Point | null, lines: Line[]) => void | 鼠标拖动点过程中触发 |
-| changed  | (point:Point | null, lines: Line[]) => void | 鼠标拖动完成触发一次（删除线条等也会触发一次）                         |
+| 事件       | 参数                                           | 说明                      |
+|----------|----------------------------------------------|-------------------------|
+| changing | (point:Point \| null, lines: Line[]) => void | 鼠标拖动点过程中触发              |
+| changed  | (point:Point \| null, lines: Line[]) => void | 鼠标拖动完成触发一次（删除线条等也会触发一次） |
 
 #### Exposed
 
