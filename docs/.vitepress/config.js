@@ -1,7 +1,7 @@
 export default {
   title: "Interesting",
   description: "Just playing around.",
-  base: "/blog-vue3-vitepress/", // 设置站点根路径 /bar/
+  base: "/vue3-blog-vitepress/", // 设置站点根路径 /bar/
   head: [
     [
       "meta",
