@@ -3,6 +3,7 @@ module.exports = {
   nav: [
     { text: "小游戏", link: "/games/" },
     { text: "前端自制组件", link: "/frontend-components/" },
+    { text: "算法演示", link: "/algorithms/" },
   ],
   sidebar: {
     "/games/": [
@@ -42,6 +43,17 @@ module.exports = {
             text: "CoordinateDrawLine - 坐标轴折线绘制",
             link: "/frontend-components/coordinate-draw-line",
           },
+        ],
+      },
+    ],
+    "/algorithms/": [
+      { text: "声明", link: "/algorithms/" },
+      {
+        text: "排序算法",
+        collapsible: true,
+        items: [
+          // This shows `/guide/index.md` page.
+          { text: "冒泡排序", link: "/algorithms/sort/bubble" }, // /guide/index.md
         ],
       },
     ],
