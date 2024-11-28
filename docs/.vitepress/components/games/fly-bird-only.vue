@@ -39,6 +39,7 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { onMounted, ref, watch } from "vue";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GameStatus } from "../../utils/enum.util";
+import { withBase } from "vitepress";
 
 const screenRef = ref();
 const [sw, sh, distance] = [480, 480, 300];
@@ -87,12 +88,13 @@ const reloadBird = () =>
   new Promise(resolve => {
     scene.remove(bird);
     const [path, mesh] = birds.find(b => b.value === selectedBird.value).value.split(",");
-    fbxLoader.load(`/bird-3d/${path}/${path}.fbx`, obj => {
+
+    fbxLoader.load(withBase(`/bird-3d/${path}/${path}.fbx`), obj => {
       bird = obj;
       bird.scale.set(0.2, 0.2, 0.2);
       scene.add(bird);
       if (mesh === "none") return resolve(true);
-      textureLoader.load(`/bird-3d/${path}/${path}.jpg`, tx => {
+      textureLoader.load(withBase(`/bird-3d/${path}/${path}.jpg`), tx => {
         bird.traverse(obj => {
           if (obj.name === mesh) {
             obj.material = new THREE.MeshPhongMaterial({

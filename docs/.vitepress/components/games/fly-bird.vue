@@ -42,6 +42,7 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { onMounted, ref, watch } from "vue";
 import StartOverMask from "../common/start-over-mask.vue";
 import { GameStatus } from "../../utils/enum.util";
+import { withBase } from "vitepress";
 
 const screenRef = ref();
 const [sw, sh, distance] = [800, 480, 300];
@@ -111,14 +112,14 @@ const reloadBird = () =>
   new Promise(resolve => {
     scene.remove(bird);
     const [path, mesh] = birds.find(b => b.value === selectedBird.value).value.split(",");
-    fbxLoader.load(`/bird-3d/${path}/${path}.fbx`, obj => {
+    fbxLoader.load(withBase(`/bird-3d/${path}/${path}.fbx`), obj => {
       bird = obj;
       bird.castShadow = true;
       bird.receiveShadow = true;
       bird.scale.set(0.04, 0.04, 0.04);
       scene.add(bird);
       if (mesh === "none") return resolve(true);
-      textureLoader.load(`/bird-3d/${path}/${path}.jpg`, tx => {
+      textureLoader.load(withBase(`/bird-3d/${path}/${path}.jpg`), tx => {
         bird.traverse(obj => {
           obj.castShadow = true;
           obj.receiveShadow = true;
