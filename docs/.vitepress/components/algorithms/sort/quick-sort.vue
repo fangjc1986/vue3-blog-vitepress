@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SortBarChart from "../comp/sort-bar-chart.vue";
-import { onBeforeUnmount, ref } from "vue";
+import { ref } from "vue";
 import { genRandArray, sortExchangeReact } from "../sort.util";
 import { sleep } from "../../../utils/cmm.util";
 
@@ -10,28 +10,33 @@ const refreshData = () => {
   data.value = genRandArray(1, 100, 100);
 };
 
-const actives = ref<number[]>([]);
 const stepInterval = ref<number>(20);
-const sorting = ref<boolean>(false);
+const actives = ref<number[]>([]);
 
 /**
- * 冒泡排序开始
+ * 快速排序入口
+ * [start, end] 分治处理范围
+ * @param start 开始位置
+ * @param end 结束位置
  */
-const sort = async () => {
-  for (let i = data.value.length; i > 0; i--) {
-    for (let j = 0; j < i - 1; j++) {
-      actives.value = [j, j + 1];
-      if (data.value[j] > data.value[j + 1]) {
-        await sleep(stepInterval.value);
-        sortExchangeReact(data.value, j, j + 1);
-      }
+const sort = async (start: number = 0, end: number = data.value.length - 1) => {
+  let left = start;
+  let right = end;
+  if (start >= end) return;
+  let p = left;
+  while (left < right) {
+    actives.value = [left, right];
+    await sleep(stepInterval.value);
+    if (data.value[left] > data.value[right]) {
+      sortExchangeReact(data.value, left, right);
+      p = p == left ? right : left;
     }
+    if (p == left) right--;
+    else left++;
   }
+  await sort(start, p - 1);
+  await sort(p + 1, end);
 };
-
-onBeforeUnmount(() => {
-  sorting.value = false;
-});
 </script>
 
 <template>

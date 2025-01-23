@@ -53,7 +53,19 @@ module.exports = {
         collapsible: true,
         items: [
           // This shows `/guide/index.md` page.
-          { text: "冒泡排序", link: "/algorithms/sort/bubble" }, // /guide/index.md
+          { text: "冒泡排序", link: "/algorithms/sort/bubble" },
+          { text: "快速排序", link: "/algorithms/sort/quick" },
+          { text: "堆（二叉树）排序", link: "/algorithms/sort/heap" },
+          { text: "归并排序", link: "/algorithms/sort/merge" },
+        ],
+      },
+      {
+        text: "搜索算法",
+        collapsible: true,
+        items: [
+          // This shows `/guide/index.md` page.
+          { text: "广度优先搜索(BFS)", link: "/algorithms/search/bfs" },
+          { text: "深度优先搜索(DFS)", link: "/algorithms/search/dfs" },
         ],
       },
     ],
