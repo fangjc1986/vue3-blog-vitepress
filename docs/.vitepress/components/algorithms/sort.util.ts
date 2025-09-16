@@ -5,7 +5,7 @@
  * @param len 长度
  */
 export const genRandArray = (min: number, max: number, len: number) => {
-  const arr = [];
+  const arr: number[] = [];
   for (let i = 0; i < len; i++) {
     arr.push(Math.floor(Math.random() * (max - min + 1)) + min);
   }
@@ -27,7 +27,7 @@ export class GenRandomFromPool<T> {
   }
 
   poll(len: number) {
-    const arr = [];
+    const arr: T[] = [];
     while (len > 0 && this.pool.length > 0) {
       const index = Math.floor(Math.random() * this.pool.length);
       arr.push(this.pool.splice(index, 1)[0]);
@@ -76,7 +76,7 @@ export const index2xy = (index: number, width: number) => {
  * @param h 高度
  * @param val 默认值
  */
-export const genMatrix = (w: number, h: number, val: (x: number, y: number) => any) => {
+export const genMatrix = <T>(w: number, h: number, val: (x: number, y: number) => T): T[][] => {
   return new Array(h).fill(0).map((_, y) => {
     return new Array(w).fill(0).map((_, x) => {
       return val(x, y);

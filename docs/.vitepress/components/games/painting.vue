@@ -21,17 +21,18 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 
+
 export default defineComponent({
   name: "painting",
   props: {},
   setup(props: any) {
-    const canvasRef: any = ref("");
+    const canvasRef = ref<HTMLCanvasElement>();
     const width = 800,
       height = 600;
 
-    let ctx = null;
+    let ctx: CanvasRenderingContext2D ;
     onMounted(() => {
-      ctx = canvasRef.value.getContext("2d");
+      ctx = canvasRef.value!.getContext("2d")!;
       ctx.strokeStyle = "black";
       ctx.lineWidth = 2;
       ctx.lineCap = "round";

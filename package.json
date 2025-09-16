@@ -1,6 +1,6 @@
 {
   "name": "vue3-blog-vitepress",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "markdown-it": "^14.0.0",
     "mermaid": "^10.7.0",
     "mermaid-it-markdown": "^1.0.5",
+    "remeda": "^2.23.0",
     "three": "^0.148.0",
     "uuid": "^9.0.1",
     "v3-drag-zoom": "^1.0.2",

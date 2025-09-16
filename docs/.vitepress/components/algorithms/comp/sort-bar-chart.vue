@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-
 interface Props {
-  data: number[];
-  actives: number[];
+  data?: number[];
+  actives?: number[];
 }
 
 const props = withDefaults(defineProps<Props>(), {

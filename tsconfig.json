@@ -1,4 +1,12 @@
 {
+  "include": [
+    "docs/.vitepress/**/*.vue",
+    "docs/.vitepress/**/*.ts",
+    "docs/.vitepress/**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "compilerOptions": {
     "moduleResolution": "node",
     "target": "es6",
@@ -22,8 +30,5 @@
       "dom.iterable",
       "scripthost"
     ],
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

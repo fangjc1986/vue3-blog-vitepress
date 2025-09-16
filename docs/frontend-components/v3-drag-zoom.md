@@ -150,6 +150,14 @@ createApp(App).use(V3DragZoom).mount("#app");
 | loading         | Boolean | false   | 是否加载中                                 |
 | animateDuration | Number  | 200     | 缩放时候的过度动画时长，单位 ms                     |
 
+#### Events
+
+| 事件名            | 参数                                                 | 说明                        |
+|----------------|----------------------------------------------------|---------------------------|
+| onMove         | ( event :[ContainerEvent](#ContainerEvent))=> void | 每移动一点距离触发，返回当前位置          |
+| onMoveFinished | ( event :[ContainerEvent](#ContainerEvent))=> void | 移动结束（鼠标抬起或超出范围）触发， 返回当前位置 |
+| onZoom         | ( event :[ContainerEvent](#ContainerEvent))=> void | 缩放触发，返回当前缩放倍数             |
+
 #### Slots
 
 | Slot    | 说明          |
@@ -173,7 +181,7 @@ createApp(App).use(V3DragZoom).mount("#app");
 | fixedSize         | Boolean                     | false       | 否    | 是否固定大小， true代表在缩放过程中该item内容尺寸不变                    |
 | rotate            | Float                       | 0           | 否    | 旋转角度单位 deg (360度）                                  |
 | draggable         | Boolean                     | false       | 否    | 是否可以拖拽移动                                           |  
-| position(v-model) | [CurPosition](#curposition) | 无           | 是    | 该 item 在内容中的位置（百分比位置）                              |
+| position(v-model) | [CurPosition](#CurPosition) | 无           | 是    | 该 item 在内容中的位置（百分比位置）                              |
 
 #### Slots
 
@@ -183,10 +191,12 @@ createApp(App).use(V3DragZoom).mount("#app");
 
 #### Events
 
-| 事件名             | 参数                      | 说明                        |
-|-----------------|-------------------------|---------------------------|
-| onMove          | ( pos :Position)=> void | 每移动一点距离触发，返回当前位置          |
-| onMoveFinished  | ( pos :Position)=> void | 移动结束（鼠标抬起或超出范围）触发， 返回当前位置 |
+| 事件名            | 参数                      | 说明                        |
+|----------------|-------------------------|---------------------------|
+| onMove         | ( pos :Position)=> void | 每移动一点距离触发，返回当前位置          |
+| onMoveFinished | ( pos :Position)=> void | 移动结束（鼠标抬起或超出范围）触发， 返回当前位置 |
+
+## 类型定义
 
 ### CurPosition
 
@@ -204,4 +214,18 @@ createApp(App).use(V3DragZoom).mount("#app");
 | sub | (pos:Position)=>Position | 无   | 否    | 计算当前 Position 与 pos 之间的差值 new Position(this.x - pos.x, this.y - pos.y); |
 | add | (pos:Position)=>Position | 无   | 否    | 计算当前 Position 与 pos 之间的和值 new Position(this.x + pos.x, this.y + pos.y); |
 
+### Size
 
+| 参数名    | 类型      | 默认值 | 是否必须 | 说明    |
+|--------|---------|-----|------|-------|
+| width  | Integer | 无   | 是    | 宽度 像素 |
+| height | Integer | 无   | 是    | 高度 像素 |
+
+### ContainerEvent
+
+| 参数名           | 类型          | 默认值 | 是否必须 | 说明                      |
+|---------------|-------------|-----|------|-------------------------|
+| center        | CurPosition | 无   | 是    | 容器中心位置（相对于容器左上角的绝对像素坐标） |
+| containerSize | Size        | 无   | 是    | 容器大小（像素）                |
+| contentSize   | Size        | 无   | 是    | 内容大小（像素）                |
+| zoom          | Float       | 无   | 是    | 缩放倍数                    |

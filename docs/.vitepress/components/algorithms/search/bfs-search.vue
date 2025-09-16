@@ -19,14 +19,14 @@ const refreshData = () => {
   start.value = index2xy(gen.poll(1)[0], w);
   data.value[start.value[1]][start.value[0]] = 1;
   const barrier = gen.poll(barrierCount.value).map(i => index2xy(i, w));
-  barrier.forEach(([x, y]) => (data.value[y][x] = 3));
+  barrier.forEach(([x, y]) => (data.value![y][x] = 3));
   const end = index2xy(gen.poll(1)[0], w);
   data.value[end[1]][end[0]] = 2;
 };
 
 const setValue = (p: number[], v: number) => {
   const [x, y] = p;
-  data.value[y].splice(x, 1, v);
+  data.value![y].splice(x, 1, v);
 };
 
 onMounted(refreshData);
@@ -42,26 +42,26 @@ const DY = [-1, 0, 1, 0];
 const search = async () => {
   const queue = [[...start.value, []]];
   while (queue.length) {
-    const p = queue.shift();
+    const p = queue.shift()!;
     const [x, y, path] = p;
-    if ([3, 5, 15].includes(data.value[y][x])) {
+    if ([3, 5, 15].includes(data.value![y][x])) {
       continue;
     }
-    const v = data.value[y][x];
+    const v = data.value![y][x];
 
     setValue(p, 4);
     await sleep(stepInterval.value);
     setValue(p, v);
 
-    if (data.value[y][x] === 2) {
+    if (data.value![y][x] === 2) {
       for (const [x, y] of path) {
-        if (data.value[y][x] != 15) {
+        if (data.value![y][x] != 15) {
           setValue([x, y], 4);
         }
       }
       return;
     }
-    setValue(p, data.value[y][x] === 1 ? 15 : 5);
+    setValue(p, data.value![y][x] === 1 ? 15 : 5);
     const nextP = [...path, [x, y]];
     for (let i = 0; i < 4; i++) {
       const [nx, ny] = [x + DX[i], y + DY[i]];
